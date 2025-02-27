@@ -30,9 +30,22 @@ body{
             div{
                 display: flex;
                 gap: 40px;
+                align-items: center;
             }
             img{
-                max-height: 50px;
+                height: 30px;
+                cursor: pointer;
+            }
+            p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 100px;
+                background-color: $blue-purple;
+                color: white;
+                font-weight: bolder;
             }
         }
         section:last-child{
@@ -61,7 +74,7 @@ body{
             width: 770px; 
             height: 200px;
             background-color: $blue-purple;
-            background-image: url(../img/titleBGdark.png);
+            background-image: url(../img/titleBGdark.svg);
         }
         section{
             box-sizing: border-box;
@@ -73,6 +86,9 @@ body{
             border-right: 0px;
             border-radius: 5px;
             padding: 15px;
+            .input_question{
+                outline: none;
+            }
         }
     }
 }
