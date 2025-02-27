@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style/style.css">
 </head>
 <body>
     <header>
         <section>
             <h1>QuizGenerator</h1>
-            <img src="" alt="colortheme">
-            <button>Опубликовать</button>
-            <img src="" alt="avatar">
+            <div>
+                <img src="../static/img/palette-library-svgrepo-com.svg" alt="colortheme">
+                <button>Опубликовать</button>
+                <img src="../static/img/login-svgrepo-com-light.svg" alt="avatar">
+            </div>
         </section>
         <section>
             <button>Вопросы</button>
@@ -22,9 +24,11 @@
         <section>
         </section>
         <section>
-            <input type="text" placeholder="Вопрос">
-            <label for="mod#1">Режим ответов</label>
-            <select name="" id="mod#1">
+            <div class="input_question" contenteditable="true">
+                <span class="input_question_placeholder">Вопрос</span>
+            </div>
+            <label for="mod1">Режим ответов</label>
+            <select name="" id="mod1">
                 <option value="radio">Один из</option>
                 <option value="chekbox">Несколько из</option>
                 <option value="text">Свой</option>
@@ -33,9 +37,10 @@
             <button>Ответ...</button>
             <button>Свой вариант</button>
         </section>
+        
     </main>
     <footer>
     </footer>
 </body>
-<script src="../static/script.js"></script>
+<script src="../static/script/script.js"></script>
 </html>

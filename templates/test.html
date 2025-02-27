@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стилизация текста</title>
+    <style>
+        .editable {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 50px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="editable" contenteditable="true">
+        Здесь можно вводить текст с <b>жирным</b>, <i>курсивом</i> и <u>подчеркиванием</u>.
+    </div>
+
+    <script>
+        // Пример добавления обработки нажатия клавиш для вставки форматированного текста
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'b') { // Ctrl + B для жирного
+                document.execCommand('bold');
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.key === 'i') { // Ctrl + I для курсива
+                document.execCommand('italic');
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.key === 'u') { // Ctrl + U для подчеркивания
+                document.execCommand('underline');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
