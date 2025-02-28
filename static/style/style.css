@@ -106,6 +106,22 @@ body main section div {
   display: flex;
   align-items: center;
 }
+body main section label {
+  cursor: pointer;
+}
+body main section label input {
+  display: none;
+}
+body main section label input:checked ~ span {
+  border-bottom: 1px #4da33c solid;
+}
+body main section button {
+  width: 110px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  text-align: left;
+  padding: 0;
+}
 body main section .question-fill {
   width: 100%;
   justify-content: space-between;
@@ -123,9 +139,27 @@ body main section .question-fill .mod select {
   display: none;
   width: 100%;
 }
-body main section .answer-fill input {
+body main section .answers {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  gap: 20px;
+}
+body main section .answers .answer-fill input {
+  background-color: aquamarine;
   position: relative;
   bottom: 2px;
+}
+body main section .answers .answer-fill .answer-del {
+  width: 20px;
+  display: block;
+}
+body main section .answers .answer-fill .answer-del img {
+  max-width: 20px;
+  filter: hue-rotate();
+}
+body main section .answers .answer-fill .answer-del img:hover {
+  color: red;
 }
 body main section .input {
   padding: 0 5px;

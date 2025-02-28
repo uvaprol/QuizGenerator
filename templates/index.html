@@ -25,7 +25,7 @@
     <main>
         <section>
         </section>
-        <section>
+        <section id="1">
             <div class="question-fill">
                 <div class="input" name="question" contenteditable="true">
                     Вопрос...
@@ -39,13 +39,31 @@
                     </select>
                 </div>
             </div>
-            <div class="answer-fill">
-                <input type="radio" placeholder="Ответ...">
-                <div class="input" name="answer" contenteditable="true">
-                    Ответ...
+            <div class="answers">
+                <template>
+                    <div class="answer-fill">
+                        <input type="radio">
+                        <div class="input" name="answer" contenteditable="true" id="1">
+                            Ответ...
+                        </div>
+                    </div>
+                </template>
+                <div class="answer-fill">
+                    <input type="radio">
+                    <div class="input" name="answer" contenteditable="true">
+                        Ответ...
+                    </div>
+                    <div class="answer-del">
+                        <img src="../static/img/delBlack.svg" alt="del">
+                        <img src="../static/img/delRed.svg" alt="del">
+                    </div>
                 </div>
             </div>
-            <button>Свой вариант</button>
+            <button onclick="addAnswer(1)">Добавить ответ</button>
+            <label name="checkBox">
+                <input type="checkbox" name="">
+                <span>Дозволить ответ глаголить</span>
+            </label>
         </section>
         
         
