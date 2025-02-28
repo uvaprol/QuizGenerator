@@ -1,4 +1,5 @@
 const inputs = document.getElementsByClassName('input')
+const mods = document.getElementsByClassName('mod')
 
 for (e of inputs){
     e.addEventListener('focus', function (){
@@ -14,3 +15,13 @@ for (e of inputs){
     })
 }
 
+for (e of mods){
+    e.addEventListener('mouseover', function (){
+        this.getElementsByTagName('label')[0].style.display = 'none'
+        this.getElementsByTagName('select')[0].style.display = 'block'
+    })
+    e.addEventListener('mouseout', function (){
+        this.getElementsByTagName('label')[0].style.display = 'block'
+        this.getElementsByTagName('select')[0].style.display = 'none'
+    })
+}
