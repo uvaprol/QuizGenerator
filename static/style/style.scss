@@ -160,13 +160,13 @@ body{
                     .answer-del{
                         width: 20px;
                         display: block;
-                        img{
+                        svg{
                             max-width: 20px;
-                            filter: hue-rotate();
-                            
                         }
-                        img:hover{
-                            color: red;
+                        svg:hover{
+                            path{
+                                stroke: red;
+                            } 
                         }
                     }
                 }

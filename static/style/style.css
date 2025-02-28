@@ -154,12 +154,11 @@ body main section .answers .answer-fill .answer-del {
   width: 20px;
   display: block;
 }
-body main section .answers .answer-fill .answer-del img {
+body main section .answers .answer-fill .answer-del svg {
   max-width: 20px;
-  filter: hue-rotate();
 }
-body main section .answers .answer-fill .answer-del img:hover {
-  color: red;
+body main section .answers .answer-fill .answer-del svg:hover path {
+  stroke: red;
 }
 body main section .input {
   padding: 0 5px;
