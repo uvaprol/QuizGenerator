@@ -25,18 +25,25 @@
         <section>
         </section>
         <section>
-            <div class="input" contenteditable="true">
-                Вопрос...
-                <!-- <span class="input_question_placeholder">Вопрос</span> -->
+            <div class="question-fill">
+                <div class="input" name="question" contenteditable="true">
+                    Вопрос...
+                </div>
+                <div class="mod">
+                    <label for="mod1">Режим ответов</label>
+                    <select name="" id="mod1">
+                        <option value="radio">Один из</option>
+                        <option value="chekbox">Несколько из</option>
+                        <option value="text">Свой</option>
+                    </select>
+                </div>
             </div>
-            <label for="mod1">Режим ответов</label>
-            <select name="" id="mod1">
-                <option value="radio">Один из</option>
-                <option value="chekbox">Несколько из</option>
-                <option value="text">Свой</option>
-            </select>
-            <input type="radio" placeholder="Ответ...">
-            <button>Ответ...</button>
+            <div class="answer-fill">
+                <input type="radio" placeholder="Ответ...">
+                <div class="input" name="answer" contenteditable="true">
+                    Ответ...
+                </div>
+            </div>
             <button>Свой вариант</button>
         </section>
         

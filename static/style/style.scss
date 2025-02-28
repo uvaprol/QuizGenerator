@@ -104,6 +104,29 @@ body{
             border-right: 0px;
             border-radius: 5px;
             padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            div{
+                height: 20px;
+                display: flex;
+                align-items: center;
+            }
+            .question-fill{
+                justify-content: space-between;
+                .input{
+                    width: 100%;
+                }
+                .mod{
+                    gap: 5px;
+                }
+            }
+            .answer-fill{
+                input{
+                    position: relative;
+                    bottom: 2px;
+                }
+            }
             .input{
                 outline: none;
             }
