@@ -1,32 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Monomakh&display=swap');
 @import "general";
 
 body{
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    height: 100vh;
+    // gap: 20px;
+    *{
+        font-family: "Monomakh", serif;
+        font-size: 16px;
+    }
     button{
         cursor: pointer;
     }
     header{
-        border-bottom: 1px $blue-purple solid;
+        border-bottom: 1px $fill solid;
         section{
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 40px;
             button{
-                background-color: $purple;
+                background-color: $elem;
                 color: white;
                 border: none;
                 width: 150px;
-                height: 50px;
+                height: 40px;
                 border-radius: 5px;
 
             }
         }
         section:first-child{
             justify-content: space-between;
-            padding: 0 10px;
+            padding: 0 20px;
             div{
                 display: flex;
                 gap: 40px;
@@ -37,15 +45,20 @@ body{
                 cursor: pointer;
             }
             p{
+                cursor: pointer;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 border-radius: 100px;
-                background-color: $blue-purple;
+                background-color: $elem;
                 color: white;
                 font-weight: bolder;
+            }
+            h1{
+                font-size: 30px;
+                color: $elem;
             }
         }
         section:last-child{
@@ -56,7 +69,7 @@ body{
 
             }
             button:hover{
-                background-color: $purple;
+                background-color: $fill;
                 color: white;
                 border-radius: 5px 5px 0 0;
 
@@ -64,29 +77,34 @@ body{
         }
     }
     main{
+        height: 100%;
+        padding: 20px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 40px;
+        background-color: $main;
         section:first-child{
             border: 0;
             padding: 0;
             width: 770px; 
             height: 200px;
-            background-color: $blue-purple;
             background-image: url(../img/titleBGdark.svg);
+            background-color: $fill;
         }
         section{
+            background-color: white;
             box-sizing: border-box;
             width: 770px; 
-            height: 200px;
-            border: 3px $light-purple solid;
-            border-top-color: $blue-purple;
+            // height: 200px;
+            border: 3px $main solid;
+            border-top-color: $fill;
+            border-left-color: $elem;
             border-bottom: 0px;
             border-right: 0px;
             border-radius: 5px;
             padding: 15px;
-            .input_question{
+            .input{
                 outline: none;
             }
         }

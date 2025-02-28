@@ -1,13 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Monomakh&display=swap");
 body {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  height: 100vh;
+}
+body * {
+  font-family: "Monomakh", serif;
+  font-size: 16px;
 }
 body button {
   cursor: pointer;
 }
 body header {
-  border-bottom: 1px #7e4ef9 solid;
+  border-bottom: 1px #4da33c solid;
 }
 body header section {
   display: flex;
@@ -16,16 +23,16 @@ body header section {
   gap: 40px;
 }
 body header section button {
-  background-color: #d44ef9;
+  background-color: #7349bd;
   color: white;
   border: none;
   width: 150px;
-  height: 50px;
+  height: 40px;
   border-radius: 5px;
 }
 body header section:first-child {
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 body header section:first-child div {
   display: flex;
@@ -37,15 +44,20 @@ body header section:first-child img {
   cursor: pointer;
 }
 body header section:first-child p {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 100px;
-  background-color: #7e4ef9;
+  background-color: #7349bd;
   color: white;
   font-weight: bolder;
+}
+body header section:first-child h1 {
+  font-size: 30px;
+  color: #7349bd;
 }
 body header section:last-child button {
   background-color: rgba(0, 0, 0, 0);
@@ -53,35 +65,39 @@ body header section:last-child button {
   border-radius: 5px 5px 0 0;
 }
 body header section:last-child button:hover {
-  background-color: #d44ef9;
+  background-color: #4da33c;
   color: white;
   border-radius: 5px 5px 0 0;
 }
 body main {
+  height: 100%;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  background-color: #e2eee0;
 }
 body main section:first-child {
   border: 0;
   padding: 0;
   width: 770px;
   height: 200px;
-  background-color: #7e4ef9;
   background-image: url(../img/titleBGdark.svg);
+  background-color: #4da33c;
 }
 body main section {
+  background-color: white;
   box-sizing: border-box;
   width: 770px;
-  height: 200px;
-  border: 3px #f94ec8 solid;
-  border-top-color: #7e4ef9;
+  border: 3px #e2eee0 solid;
+  border-top-color: #4da33c;
+  border-left-color: #7349bd;
   border-bottom: 0px;
   border-right: 0px;
   border-radius: 5px;
   padding: 15px;
 }
-body main section .input_question {
+body main section .input {
   outline: none;
 }/*# sourceMappingURL=style.css.map */
