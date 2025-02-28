@@ -96,7 +96,7 @@ body{
             background-color: white;
             box-sizing: border-box;
             width: 770px; 
-            // height: 200px;
+            height: auto;
             border: 3px $main solid;
             border-top-color: $fill;
             border-left-color: $elem;
@@ -108,15 +108,12 @@ body{
             flex-direction: column;
             gap: 20px;
             div{
-                height: 20px;
                 display: flex;
                 align-items: center;
             }
             .question-fill{
+                width: 100%;
                 justify-content: space-between;
-                .input{
-                    width: 100%;
-                }
                 .mod{
                     gap: 5px;
                 }
@@ -128,6 +125,11 @@ body{
                 }
             }
             .input{
+                // background-color: aqua;
+                padding: 0 5px;
+                display: block;
+                width: 100%;
+                height: auto;
                 outline: none;
             }
         }
