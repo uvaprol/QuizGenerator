@@ -153,6 +153,7 @@ body main section .answers .answer-fill input {
 body main section .answers .answer-fill .answer-del {
   width: 20px;
   display: block;
+  cursor: pointer;
 }
 body main section .answers .answer-fill .answer-del svg {
   max-width: 20px;

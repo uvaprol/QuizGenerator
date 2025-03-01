@@ -15,18 +15,33 @@ function InputsMenager(){
             if (this.innerText == '' || this.innerHTML == '<br>'){
                 this.getAttribute('name') == 'question' ? this.innerText = 'Вопрос...' : this.innerText = 'Ответ...'
                 this.style.borderBottom = 'none'
-                alert()
             }
         })
     }
 }
+let quiz = {
 
+}
 function addAnswer(n){
-                    // InputsMenager()
-                                // sections[this.id].removeChild(sections[this.id].getElementsByClassName('answers')[sections[this.id].getElementsByClassName('answers').length - 1])
-    sections[n].getElementsByClassName('answers')[0].innerHTML += 
-    sections[n].getElementsByClassName('answers')[0].getElementsByTagName('template')[0].innerHTML
+    if (quiz[n]){
+        console.log(quiz[n])
+        quiz[n]++
+    } else {
+        quiz[n] = 1
+    }
+    const parent = sections[n].getElementsByClassName('answers')[0]
+    let child = parent.getElementsByTagName('template')[0].innerHTML
+    child = child.replaceAll('_id_', quiz[n])
+    console.log(child)
+    parent.innerHTML += child
+    InputsMenager()
+}
 
+function delAnswer(n, node){
+    const parent = sections[n].getElementsByClassName('answers')[0]
+    const child = parent.getElementsByClassName(node.id)[0]
+    parent.removeChild(child)
+    console.log(child)
 }
 
 
@@ -42,3 +57,4 @@ for (e of mods){
 }
 
 InputsMenager()
+
