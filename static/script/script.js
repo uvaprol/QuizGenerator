@@ -1,5 +1,7 @@
 const mods = document.getElementsByClassName('mod')
-const sections = document.getElementsByTagName('main')[0].getElementsByTagName('section')
+const main = document.getElementsByTagName('main')[0]
+const sections = main.getElementsByTagName('section')
+const templates = main.getElementsByTagName('template')
 
 function InputsMenager(){
     const inputs = document.getElementsByClassName('input')
@@ -19,9 +21,8 @@ function InputsMenager(){
         })
     }
 }
-let quiz = {
-
-}
+// let question = 1
+let quiz = {}
 function addAnswer(n){
     if (quiz[n]){
         console.log(quiz[n])
@@ -30,18 +31,35 @@ function addAnswer(n){
         quiz[n] = 1
     }
     const parent = sections[n].getElementsByClassName('answers')[0]
-    let child = parent.getElementsByTagName('template')[0].innerHTML
-    child = child.replaceAll('_id_', quiz[n])
-    console.log(child)
-    parent.innerHTML += child
+    let child = templates[1].innerHTML
+    parent.innerHTML += child.replaceAll('_id_', quiz[n])
     InputsMenager()
+}
+
+function addQuestion(){
+    
 }
 
 function delAnswer(n, node){
     const parent = sections[n].getElementsByClassName('answers')[0]
-    const child = parent.getElementsByClassName(node.id)[0]
-    parent.removeChild(child)
-    console.log(child)
+    const nodes = parent.getElementsByClassName('answer-del')
+    const fills = parent.getElementsByClassName('answer-fill')
+    for (let i=0; i < nodes.length; i++){
+        if (nodes[i] == node){
+            parent.removeChild(fills[i])
+        }
+    }
+    // parent.removeChild(child)
+    // console.log(child)
+}
+
+function delQuestion(node){
+    const nodes = main.getElementsByTagName('aside')
+    for (let i=0; i < nodes.length; i++){
+        if (nodes[i] == node){
+            main.removeChild(sections[i+1])
+        }
+    }
 }
 
 

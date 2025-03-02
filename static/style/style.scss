@@ -29,7 +29,6 @@ body{
                 width: 150px;
                 height: 40px;
                 border-radius: 5px;
-
             }
         }
         section:first-child{
@@ -84,6 +83,14 @@ body{
         align-items: center;
         gap: 40px;
         background-color: $main;
+        #addQuestButton{
+            background-color: $elem;
+            color: white;
+            border: none;
+            width: 150px;
+            height: 40px;
+            border-radius: 5px;
+        }
         section:first-child{
             border: 0;
             padding: 0;
@@ -126,6 +133,21 @@ body{
                 background-color: #00000000;
                 text-align: left;
                 padding: 0;
+            }
+            .bottom-side{
+                justify-content: space-between;
+                aside{
+                    width: 20px;
+                    cursor: pointer;
+                    position: relative;
+                    left: 40px;
+                    top: 15px;
+                    svg:hover{
+                        path{
+                            stroke: red;
+                        } 
+                    }
+                }
             }
             .question-fill{
                 width: 100%;

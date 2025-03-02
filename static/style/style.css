@@ -78,6 +78,14 @@ body main {
   gap: 40px;
   background-color: #e2eee0;
 }
+body main #addQuestButton {
+  background-color: #7349bd;
+  color: white;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+}
 body main section:first-child {
   border: 0;
   padding: 0;
@@ -121,6 +129,19 @@ body main section button {
   background-color: rgba(0, 0, 0, 0);
   text-align: left;
   padding: 0;
+}
+body main section .bottom-side {
+  justify-content: space-between;
+}
+body main section .bottom-side aside {
+  width: 20px;
+  cursor: pointer;
+  position: relative;
+  left: 40px;
+  top: 15px;
+}
+body main section .bottom-side aside svg:hover path {
+  stroke: red;
 }
 body main section .question-fill {
   width: 100%;
