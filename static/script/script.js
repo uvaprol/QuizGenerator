@@ -10,7 +10,6 @@ function InputsMenager(){
             if (this.innerText == 'Вопрос...' || this.innerText == 'Ответ...'){
                 this.innerText = ''
                 this.style.borderBottom = '1px #4da33c solid'
-                
             }
         })
         e.addEventListener('blur', function (){
@@ -22,35 +21,37 @@ function InputsMenager(){
     }
 }
 // let question = 1
-let quiz = {}
-function addAnswer(n){
-    if (quiz[n]){
-        console.log(quiz[n])
-        quiz[n]++
-    } else {
-        quiz[n] = 1
+function addAnswer(node){
+    const nodes = main.getElementsByClassName('addAnswerBtn')
+    for (let i=0; i < nodes.length; i++){
+        if (nodes[i] == node){
+            const parent = sections[i+1].getElementsByClassName('answers')[0]
+            parent.innerHTML += templates[1].innerHTML
+            InputsMenager()
+            break
+        }
     }
-    const parent = sections[n].getElementsByClassName('answers')[0]
-    let child = templates[1].innerHTML
-    parent.innerHTML += child.replaceAll('_id_', quiz[n])
-    InputsMenager()
 }
 
 function addQuestion(){
-    
+    const btn = document.getElementById('addQuestButton')
+    main.removeChild(btn)
+    main.innerHTML += templates[0].innerHTML
 }
 
-function delAnswer(n, node){
-    const parent = sections[n].getElementsByClassName('answers')[0]
-    const nodes = parent.getElementsByClassName('answer-del')
-    const fills = parent.getElementsByClassName('answer-fill')
-    for (let i=0; i < nodes.length; i++){
-        if (nodes[i] == node){
-            parent.removeChild(fills[i])
+function delAnswer(node){
+    console.log(node)
+    for (section of sections){
+        const childs = section.getElementsByClassName('answer-fill')
+        for (child of childs){
+            const btn = child.getElementsByClassName('answer-del')[0]
+            if (btn == node){
+                const parent = section.getElementsByClassName('answers')[0]
+                parent.removeChild(child)
+                break
+            }
         }
     }
-    // parent.removeChild(child)
-    // console.log(child)
 }
 
 function delQuestion(node){
@@ -58,6 +59,7 @@ function delQuestion(node){
     for (let i=0; i < nodes.length; i++){
         if (nodes[i] == node){
             main.removeChild(sections[i+1])
+            break
         }
     }
 }
