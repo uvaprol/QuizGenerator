@@ -1,2 +1,2 @@
 # QuizGenerator
-Online quize`s web-site
+Online quiz Website
