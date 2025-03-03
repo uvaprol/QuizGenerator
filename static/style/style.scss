@@ -175,10 +175,12 @@ body{
                 align-items: normal;
                 gap: 20px;
                 .answer-fill{
-                    input{
-                        background-color: aquamarine;
+                    input[type = radio]{
                         position: relative;
                         bottom: 2px;
+                    }
+                    input[type = text]{
+                        display: none;
                     }
                     .answer-del{
                         width: 20px;

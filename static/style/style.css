@@ -166,10 +166,12 @@ body main section .answers {
   align-items: normal;
   gap: 20px;
 }
-body main section .answers .answer-fill input {
-  background-color: aquamarine;
+body main section .answers .answer-fill input[type=radio] {
   position: relative;
   bottom: 2px;
+}
+body main section .answers .answer-fill input[type=text] {
+  display: none;
 }
 body main section .answers .answer-fill .answer-del {
   width: 20px;

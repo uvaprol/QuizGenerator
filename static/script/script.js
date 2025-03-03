@@ -1,4 +1,3 @@
-const mods = document.getElementsByClassName('mod')
 const main = document.getElementsByTagName('main')[0]
 const sections = main.getElementsByTagName('section')
 const templates = main.getElementsByTagName('template')
@@ -20,7 +19,34 @@ function InputsMenager(){
         })
     }
 }
-// let question = 1
+
+function ModManager(){
+    const mods = document.getElementsByClassName('mod')
+    console.log(mods)
+    for (e of mods){
+        e.addEventListener('mouseover', function (){
+            this.getElementsByTagName('label')[0].style.display = 'none'
+            this.getElementsByTagName('select')[0].style.display = 'block'
+        })
+        e.addEventListener('mouseout', function (){
+            this.getElementsByTagName('label')[0].style.display = 'block'
+            this.getElementsByTagName('select')[0].style.display = 'none'
+        })
+        e.addEventListener('change', function (){
+            const m = this.getElementsByTagName('select')[0].value
+            // определяем ноду родитель и получаем ее поле для ответов
+            //меняем type у инпутов на m
+            if (m == 'text'){
+                /* меняем html содержимое на чистый шаблон 
+                убираем кнопку добавить элемент новый ответ
+                меняем type у инпута на m*/
+            } else {
+                //проверяем существование кнопки добавить ответ
+            }
+        })
+    }
+}
+
 function addAnswer(node){
     const nodes = main.getElementsByClassName('addAnswerBtn')
     for (let i=0; i < nodes.length; i++){
@@ -37,6 +63,8 @@ function addQuestion(){
     const btn = document.getElementById('addQuestButton')
     main.removeChild(btn)
     main.innerHTML += templates[0].innerHTML
+    InputsMenager()
+    ModManager()
 }
 
 function delAnswer(node){
@@ -65,16 +93,5 @@ function delQuestion(node){
 }
 
 
-for (e of mods){
-    e.addEventListener('mouseover', function (){
-        this.getElementsByTagName('label')[0].style.display = 'none'
-        this.getElementsByTagName('select')[0].style.display = 'block'
-    })
-    e.addEventListener('mouseout', function (){
-        this.getElementsByTagName('label')[0].style.display = 'block'
-        this.getElementsByTagName('select')[0].style.display = 'none'
-    })
-}
-
 InputsMenager()
-
+ModManager()
