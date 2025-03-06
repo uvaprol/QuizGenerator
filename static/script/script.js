@@ -33,15 +33,29 @@ function ModManager(){
             this.getElementsByTagName('select')[0].style.display = 'none'
         })
         e.addEventListener('change', function (){
-            const m = this.getElementsByTagName('select')[0].value
+            const child = this.getElementsByTagName('select')[0]
+            const mode = child.value
             // определяем ноду родитель и получаем ее поле для ответов
             //меняем type у инпутов на m
-            if (m == 'text'){
-                /* меняем html содержимое на чистый шаблон 
-                убираем кнопку добавить элемент новый ответ
-                меняем type у инпута на m*/
-            } else {
-                //проверяем существование кнопки добавить ответ
+            for (section of sections){
+                if (child == section.getElementsByTagName('select')[0]){
+                    const inputs = section.getElementsByTagName('input')
+                    const btn = section.getElementsByClassName('addAnswerBtn')[0]
+                    for (input of inputs){
+                        input.type = mode
+                    }
+                    if (mode == 'text'){
+                        const parent = section.getElementsByClassName('answers')[0]
+                        const answers = [...section.getElementsByClassName('answer-fill')].slice(1)
+                        for (answer of answers){
+                            parent.removeChild(answer)
+                        }
+                        btn.style.display = 'none'
+                        console.log(btn.style.display)
+                    } else {
+                        btn.style.display = 'block'
+                    }
+                }
             }
         })
     }
