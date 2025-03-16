@@ -138,7 +138,7 @@ body main section .bottom-side aside {
   cursor: pointer;
   position: relative;
   left: 40px;
-  top: 15px;
+  top: 55px;
 }
 body main section .bottom-side aside svg:hover path {
   stroke: red;

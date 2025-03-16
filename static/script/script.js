@@ -22,7 +22,6 @@ function InputsMenager(){
 
 function ModManager(){
     const mods = document.getElementsByClassName('mod')
-    console.log(mods)
     for (e of mods){
         e.addEventListener('change', function (){
             const child = this.getElementsByTagName('input')[0]
