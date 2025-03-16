@@ -24,22 +24,14 @@ function ModManager(){
     const mods = document.getElementsByClassName('mod')
     console.log(mods)
     for (e of mods){
-        e.addEventListener('mouseover', function (){
-            this.getElementsByTagName('label')[0].style.display = 'none'
-            this.getElementsByTagName('select')[0].style.display = 'block'
-        })
-        e.addEventListener('mouseout', function (){
-            this.getElementsByTagName('label')[0].style.display = 'block'
-            this.getElementsByTagName('select')[0].style.display = 'none'
-        })
         e.addEventListener('change', function (){
-            const child = this.getElementsByTagName('select')[0]
-            const mode = child.value
+            const child = this.getElementsByTagName('input')[0]
+            const mode = child.checked ? 'radio' : 'checkbox'
             // определяем ноду родитель и получаем ее поле для ответов
             //меняем type у инпутов на m
             for (section of sections){
-                if (child == section.getElementsByTagName('select')[0]){
-                    const inputs = section.getElementsByTagName('input')
+                if (child == section.getElementsByTagName('input')[0]){
+                    const inputs = section.getElementsByClassName('answers')[0].getElementsByTagName('input')
                     const btn = section.getElementsByClassName('addAnswerBtn')[0]
                     for (input of inputs){
                         input.type = mode
@@ -66,6 +58,10 @@ function addAnswer(node){
     for (let i=0; i < nodes.length; i++){
         if (nodes[i] == node){
             const parent = sections[i+1].getElementsByClassName('answers')[0]
+            /*
+            Добавить проверку активного режима
+            заменить в шаблоне тип инпута
+            */
             parent.innerHTML += templates[1].innerHTML
             InputsMenager()
             break
